@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Inputs from "./Inputs.jsx";
-
+import {Card} from 'react-bootstrap';
 const ToDo = () => {
   const [textEntered, setTextEntered] = useState("");
   const [tasks, setTasks] = useState([]);
@@ -28,13 +28,16 @@ const ToDo = () => {
     })
   }
 
+
+
   return (
     <div>
+
       <h1 className="todo-header">To Do List</h1>
       <div className="todo-container d-flex flex-column">
         <div className="todo-container-header d-flex flex-row">
           <span className="me-3">Tasks:</span>
-          <input
+          <input className="field"
             type="text"
             onChange={inputValue}
             onKeyDown={addNewTask}
@@ -43,7 +46,7 @@ const ToDo = () => {
         </div>
 
         <div className="todo-container-body flex-grow-1">
-          <ul>
+          <ul >
             {tasks.map((task, index) => (
               <Inputs
                 key={index}
@@ -56,9 +59,8 @@ const ToDo = () => {
         </div>
 
         <div className="flex-grow-1">
-           {tasks.length === 0
-        ? "No tasks"
-        : `Number of Tasks: ${tasks.length}`}
+           {tasks.length === 0 ? "No tasks": 
+           `Number of Tasks: ${tasks.length}`}
         </div>
       </div>
     </div>
