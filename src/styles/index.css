@@ -13,7 +13,12 @@
     color: red;
     padding-left: 10px;
     justify-content: right;
+    visibility: hidden;
 }
 .field {
     width: 100%;
 }
+li:hover span {
+    visibility: visible;
+}
+
